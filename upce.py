@@ -29,6 +29,6 @@ def compress(upce: str):
 
 if __name__ == '__main__':
     import sys
-    expanded = expand(sys.argv[1])
+    expanded = expand(sys.argv[1] if len(sys.argv) > 1 else '07831504')
     print(expanded)
     print(compress(expanded))
