@@ -1,11 +1,11 @@
-import mongoose from 'mongoose';
+import { MongoClient } from 'mongodb';
 
-mongoose.connect('mongodb://localhost/jaguar', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+const URL = 'mongodb://localhost:27017';
+const DATABASE = 'jaguar';
 
-const db = mongoose.connection;
+const client = new MongoClient(URL, { useUnifiedTopology: true });
 
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', () => console.log('connected!'));
+export async function getDb() {
+  if (!client.isConnected()) await client.connect();
+  return client.db(DATABASE);
+}
