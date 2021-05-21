@@ -6,6 +6,7 @@ name = "pypi"
 [packages]
 django = "*"
 gtin = "*"
+django-webpack-loader = "*"
 
 [dev-packages]
 black = "*"
