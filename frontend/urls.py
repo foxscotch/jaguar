@@ -4,8 +4,8 @@ from django.conf.urls.static import static
 
 from . import views
 
-
-urlpatterns = static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + [
-    path("", views.serve, name="serve_root"),
-    re_path("^.*/", views.serve, name="serve"),
-]
+if settings.DEBUG:
+    urlpatterns = static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + [
+        path("", views.serve, name="serve_root"),
+        re_path("^.*/", views.serve, name="serve"),
+    ]
