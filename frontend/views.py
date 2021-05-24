@@ -1,6 +1,7 @@
 import os
-from django.http import HttpResponse
 from django.conf import settings
+from django.http import HttpResponse
+from django.http.response import HttpResponseServerError
 
 
 with open(
@@ -10,4 +11,10 @@ with open(
 
 
 def serve(request):
-    return HttpResponse(CACHED)
+    if settings.DEBUG:
+        return HttpResponse(CACHED)
+    else:
+        return HttpResponseServerError(
+            "This view should never be called when running under production; "
+            "use another server to serve the website's static content."
+        )
