@@ -2,8 +2,8 @@ from django.db import models
 
 
 class FoodItem(models.Model):
-    name = models.CharField()
-    brand = models.ForeignKey("Brand", models.CASCADE)
+    name = models.CharField(max_length=32)
+    brand = models.ForeignKey("main.Brand", models.CASCADE)
     cost = models.IntegerField()
     gtin = models.CharField(max_length=14)
 
