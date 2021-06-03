@@ -1,0 +1,14 @@
+{% extends "main/base.j2" %}
+
+{% block title %}Index{% endblock %}
+
+{% block head %}
+  {{ super() }}
+{% endblock %}
+
+{% block content %}
+  <h1>Jaguar</h1>
+  <p>
+    <a href="{{ reverse('fitness:index') }}">Fitness</a>
+  </p>
+{% endblock %}
