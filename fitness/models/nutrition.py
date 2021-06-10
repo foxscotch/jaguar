@@ -13,14 +13,14 @@ class FoodItem(models.Model):
         max_length=32, help_text="Alternate human-readable serving size, e.g. '1 box'"
     )
     calories = models.IntegerField()
-    nutrition = models.ManyToManyField("NutritionInfo")
+    nutrition = models.ManyToManyField("Nutrition")
 
 
-class NutritionInfo(models.Model):
-    field = models.ForeignKey("NutritionField", models.PROTECT)
+class Nutrition(models.Model):
+    field = models.ForeignKey("Nutrient", models.PROTECT)
     value = models.FloatField()
 
 
-class NutritionField(models.Model):
+class Nutrient(models.Model):
     name = models.CharField(max_length=32)
     unit = models.CharField(max_length=16)
