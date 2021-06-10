@@ -3,4 +3,4 @@ from django.shortcuts import render
 
 
 def index(request):
-    return HttpResponse("Fitness!")
+    return render(request, "fitness/index.j2", {})
