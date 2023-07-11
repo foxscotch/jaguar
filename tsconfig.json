@@ -10,7 +10,8 @@
     "sourceMap": true,
     "strict": true,
     "emitDecoratorMetadata": true, // JAG-10: Required by TypeORM
-    "experimentalDecorators": true // JAG-10: Required by TypeORM
+    "experimentalDecorators": true, // JAG-10: Required by TypeORM
+    "strictPropertyInitialization": false // Remove these errors in TypeORM models
   }
   // Path aliases are handled by https://kit.svelte.dev/docs/configuration#alias
   //

@@ -4,6 +4,7 @@
 import "reflect-metadata";
 
 import { DataSource } from "typeorm";
+import { User } from "./models/user";
 
 export const AppDataSource = new DataSource({
   type: "postgres",
@@ -12,7 +13,7 @@ export const AppDataSource = new DataSource({
   username: "jaguar",
   password: "jaguar",
   database: "jaguar",
-  entities: [],
+  entities: [User],
   synchronize: true,
   logging: true,
 });
