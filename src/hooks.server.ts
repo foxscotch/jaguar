@@ -3,6 +3,7 @@
 //
 // Code here will be executed once on server startup
 
+import "reflect-metadata";
 import { initDataSource } from "$lib/server/orm/setup";
 
 await initDataSource();

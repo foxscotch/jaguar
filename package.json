@@ -29,6 +29,7 @@
   },
   "type": "module",
   "dependencies": {
+    "@rollup/plugin-typescript": "^11.1.2",
     "@skeletonlabs/skeleton": "^1.8.0",
     "argon2": "^0.30.3",
     "pg": "^8.11.1",
