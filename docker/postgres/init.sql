@@ -11,3 +11,7 @@ CREATE USER jaguar
 CREATE DATABASE jaguar;
 
 GRANT ALL PRIVILEGES ON DATABASE jaguar TO jaguar;
+
+\c jaguar
+
+GRANT ALL ON SCHEMA public TO jaguar;
