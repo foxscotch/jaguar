@@ -13,6 +13,9 @@ export default class User extends BaseEntity {
   @Column()
   passwordHash: string;
 
+  @Column()
+  superuser: boolean;
+
   @OneToMany(() => Session, (session) => session.user)
   sessions: Session[];
 
