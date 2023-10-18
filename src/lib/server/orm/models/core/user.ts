@@ -45,4 +45,12 @@ export default class User extends BaseEntity {
   async checkPassword(password: string) {
     return await checkPassword(password, this.passwordHash);
   }
+
+  /** Return a serializable view of the entity, suitable for HTTP responses. */
+  serializable() {
+    return {
+      username: this.username,
+      superuser: this.superuser,
+    };
+  }
 }
