@@ -1,11 +1,7 @@
 <script lang="ts">
-  import "@skeletonlabs/skeleton/themes/theme-crimson.css";
-  import "@skeletonlabs/skeleton/styles/skeleton.css";
-  import "../app.postcss";
+  import "../app.css";
 
   import type { LayoutData } from "./$types";
-
-  import { AppShell } from "@skeletonlabs/skeleton";
 
   import Header from "./header.svelte";
   import Sidebar from "./sidebar.svelte";
@@ -14,9 +10,7 @@
   export let data: LayoutData;
 </script>
 
-<AppShell>
-  <Header slot="header" />
-  <Sidebar slot="sidebarLeft" />
-  <slot />
-  <Footer slot="pageFooter" />
-</AppShell>
+<Header/>
+<Sidebar/>
+<slot />
+<Footer/>

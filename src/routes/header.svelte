@@ -1,9 +1,22 @@
-<script lang="ts">
-  import { AppBar } from "@skeletonlabs/skeleton";
-</script>
+<nav>
+  <ul>
+    <li>🐈</li>
+    <li>Jaguar</li>
+    <li>Other stuff</li>
+  </ul>
+</nav>
 
-<AppBar>
-  <svelte:fragment slot="lead">🐈</svelte:fragment>
-  Jaguar
-  <svelte:fragment slot="trail">(actions)</svelte:fragment>
-</AppBar>
+<style>
+  nav {
+    position: sticky;
+    top: 0;
+    background-color: white;
+    border-bottom: 1px solid black;
+    padding: 4px;
+  }
+
+  nav ul {
+    width: 100%;
+    display: flex;
+  }
+</style>

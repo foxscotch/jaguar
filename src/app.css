@@ -1,0 +1,11 @@
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter-VariableFont_slnt,wght.ttf");
+}
+
+:root {
+  --theme-font-family-base: sans-serif;
+  --theme-font-family-heading: sans-serif;
+
+  font-family: var(--theme-font-family-base);
+}
