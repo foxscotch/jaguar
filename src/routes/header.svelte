@@ -1,22 +1,9 @@
-<nav>
-  <ul>
-    <li>🐈</li>
-    <li>Jaguar</li>
-    <li>Other stuff</li>
-  </ul>
-</nav>
+<script lang="ts">
+  import Navbar from "$lib/components/navbar.svelte";
+  import NavbarItem from "$lib/components/navbar-item.svelte";
+</script>
 
-<style>
-  nav {
-    position: sticky;
-    top: 0;
-    background-color: white;
-    border-bottom: 1px solid black;
-    padding: 4px;
-  }
-
-  nav ul {
-    width: 100%;
-    display: flex;
-  }
-</style>
+<Navbar>
+  <NavbarItem primary={true}>Jaguar</NavbarItem>
+  <NavbarItem>Other stuff</NavbarItem>
+</Navbar>
