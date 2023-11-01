@@ -20,20 +20,9 @@
   <slot />
 </div>
 
-<div class="footer">
-  <p>&copy; Foxscotch</p>
-</div>
-
 
 <style>
   #main {
     padding: 10px;
-  }
-
-  .footer {
-    width: 100%;
-    border-top: var(--standard-border);
-    text-align: center;
-    padding: 4px 0 4px;
   }
 </style>
