@@ -6,10 +6,11 @@
 
 <style>
   nav {
+    width: 100%;
     position: sticky;
     top: 0;
     background-color: white;
-    border-bottom: 1px solid black;
+    border-bottom: var(--standard-border);
   }
 
   nav ul {

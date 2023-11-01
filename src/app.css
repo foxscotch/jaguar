@@ -7,5 +7,7 @@
   --theme-font-family-base: sans-serif;
   --theme-font-family-heading: sans-serif;
 
+  --standard-border: 1px solid black;
+
   font-family: var(--theme-font-family-base);
 }

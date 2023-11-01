@@ -9,11 +9,11 @@
 <style>
   li {
     padding: 4px 8px 4px;
-    border-left: 1px solid black;
+    border-right: var(--standard-border);
   }
 
-  li:first-child {
-    border-left: none;
+  li:last-child {
+    border-right: none;
   }
 
   li.primary {
