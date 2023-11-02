@@ -3,7 +3,7 @@
 </script>
 
 <li class:primary>
-  <slot></slot>
+  <slot />
 </li>
 
 <style>

@@ -1,6 +1,6 @@
 <nav>
   <ul>
-    <slot></slot>
+    <slot />
   </ul>
 </nav>
 

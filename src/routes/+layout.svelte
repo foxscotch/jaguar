@@ -9,7 +9,6 @@
   export let data: LayoutData;
 </script>
 
-
 <Navbar>
   <NavbarItem primary={true}>Jaguar</NavbarItem>
 </Navbar>
@@ -19,7 +18,6 @@
 <div id="main">
   <slot />
 </div>
-
 
 <style>
   #main {
