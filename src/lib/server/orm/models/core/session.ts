@@ -43,13 +43,34 @@ export default class Session extends BaseEntity {
   @Column({ nullable: true })
   userAgent: string;
 
+  /**
+   * Either finds a session by its ID or doesn't.
+   *
+   * @param sessionId - The session ID we're looking for, or undefined, for convenience.
+   * @returns The associated session if we found it, otherwise null.
+   */
+  static async getSessionOrNot(sessionId?: string): Promise<Session | null> {
+    if (typeof sessionId === "undefined") return null;
+
+    return await Session.findOneBy({ sessionId });
+  }
+
   /** Generate a session ID. */
-  generateId(): Promise<string> {
+  static generateId(): Promise<string> {
     return new Promise((resolve, reject) =>
       randomBytes(SESSION_ID_LENGTH, (error, buffer) => {
         if (error) reject(error);
         else resolve(buffer.toString("hex"));
       })
     );
+  }
+
+  static async createSession(user: User): Promise<Session> {
+    const session = new Session();
+
+    session.user = user;
+    session.sessionId = await this.generateId();
+
+    return session;
   }
 }
