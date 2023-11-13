@@ -27,10 +27,6 @@ export default class Session extends BaseEntity {
   @Index({ unique: true })
   sessionId: string;
 
-  /** Hostname cookie belongs to. Does this actually matter? Do we need to save this? */
-  @Column()
-  origin: string;
-
   /** End user's IP address, if available. */
   @Column({ nullable: true })
   source: string;
@@ -69,9 +65,8 @@ export default class Session extends BaseEntity {
    * Creates a brand spanking new session and returns it.
    *
    * @param user - User to be associated with the session.
-   * @param hostname - Hostname used for the cookie.
    */
-  static async createSession(user: User, hostname: string): Promise<Session> {
+  static async createSession(user: User): Promise<Session> {
     const session = new Session();
 
     session.user = user;
